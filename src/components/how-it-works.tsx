@@ -12,12 +12,12 @@ const HowItWorks = () => (
             <li>Create a campaign with a deadline, and set a bounty</li>
             <li>Your followers sign up and verify their email</li>
             <li>
-                They can opt-in to becomea a referrers, and use their special
+                They can opt-in to become a referrers, and use their special
                 link to advance on the leaderboard
             </li>
             <li>
                 The followers with the highest referral count receive
-                cryptocurreny as a form of payment
+                cryptocurrency as a form of payment
             </li>
             <li>
                 At the end of the campaign, export your list of email addresses,

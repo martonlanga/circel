@@ -79,8 +79,7 @@ const UserPage: NextPage<{
                 >
                     <h1 className="heading-3">Subscribe</h1>
                     <p className="text-gray-600">
-                        Your email will be put on {username}'s Substack email
-                        list. You can unsubscribe anytime.
+                        Subscribe to {username}'s email list.
                     </p>
                     <Input
                         type="email"
@@ -97,7 +96,7 @@ const UserPage: NextPage<{
                 <div className="bg-white max-w-lg flex flex-col p-10 space-y-6 rounded-lg mx-auto">
                     <h1 className="heading-3">Confirm your email</h1>
                     <p className="paragraph">
-                        Click the link in your inbox to verify your email.
+                        Please verify your email to confirm the subscription.
                     </p>
                     <p className="paragraph">
                         Advance on the{' '}
@@ -133,6 +132,7 @@ export const getStaticProps = async ({ params }) => {
         props: {
             user,
         },
+        unstable_revalidate: 1,
     }
 }
 

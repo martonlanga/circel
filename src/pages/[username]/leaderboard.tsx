@@ -1,23 +1,24 @@
-import { PrismaClient } from '@prisma/client'
 import { format } from 'date-fns'
-import { GetServerSideProps, NextPage } from 'next'
 import { useRouter } from 'next/router'
 import { useState } from 'react'
+import useSWR from 'swr'
 import Button from '../../components/button'
 import Layout from '../../components/layout'
 import Leaderboard from '../../components/leaderboard'
-import Payout from '../../components/payout'
 import Tile from '../../components/tile'
 import useUser from '../../lib/useUser'
 
-const LeaderboardPage: NextPage<{
-    ethBounty: number
-    endOfCampaign: string
-}> = ({ ethBounty, endOfCampaign }) => {
-    const { user } = useUser()
+const LeaderboardPage = () => {
     const router = useRouter()
     const { username } = router.query
+    const { data, error } = useSWR<{
+        ethBounty: number
+        endOfCampaign: string
+    }>('/api/leaderboard?username=' + username)
+    const { user } = useUser()
     const [showPayout, setShowPayout] = useState(false)
+    if (!data) return null
+    const { ethBounty, endOfCampaign } = data
     return (
         <Layout>
             {user?.isLoggedIn && (
@@ -30,7 +31,7 @@ const LeaderboardPage: NextPage<{
                             className="fixed inset-0 w-full h-full flex items-center justify-center"
                             style={{ background: 'rgba(0, 0, 0, 0.6)' }}
                         >
-                            <Payout />
+                            {/* <Payout referrers={[]} /> */}
                         </div>
                     )}
                 </div>
@@ -45,22 +46,6 @@ const LeaderboardPage: NextPage<{
             <Leaderboard username={username as string} />
         </Layout>
     )
-}
-
-const prisma = new PrismaClient()
-
-export const getServerSideProps: GetServerSideProps = async ({ params }) => {
-    const username = params.username as string
-
-    const results = await prisma.user.findOne({
-        where: { username },
-        select: {
-            ethBounty: true,
-            endOfCampaign: true,
-        },
-    })
-
-    return { props: JSON.parse(JSON.stringify(results)) } // https://github.com/vercel/next.js/pull/12156
 }
 
 export default LeaderboardPage

@@ -1,6 +1,20 @@
 # [circel.me](https://circel.me) | [Github](https://github.com/martonlanga/circel) — A hybrid approach
 
+# Features
+
+1. Sign up using Twitter and upload your followers
+2. Send out personalized DM's to your followers, with a link where they can subscribe to your email list
+3. Create a campaign with a deadline, and set a bounty
+4. Your followers sign up and verify their email
+5. They can opt-in to become a referrers, and use their special link to advance on the leaderboard
+6. The followers with the highest referral count receive cryptocurrency as a form of payment
+7. At the end of the campaign, export your list of email addresses, and import it on your platform of choice
+
 # Architecture
+
+# Testing
+
+I made a new (Twitter account)[https://twitter.com/circeldotme] and bought 500 followers with BTC for testing.
 
 # Future plans
 
@@ -31,7 +45,7 @@
 
 # FAQ
 
-## How are the DM's sent out?
+## How are the DM's sent?
 
 A cron job is running every hour and sends out 42 to messages from each accout. During the requests, the job waits for a random interval to avoid being rate limited.
 

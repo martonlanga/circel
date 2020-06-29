@@ -53,7 +53,7 @@ const Leaderboard = ({ username, preview = false }: Props) => {
                                     </a>
                                 </td>
                                 <td className="px-3 py-3">{ref.referrals}</td>
-                                <td className="px-3 py-3">${ref.bounty}</td>
+                                <td className="px-3 py-3">{ref.bounty} ETH</td>
                             </tr>
                         ))}
                 </tbody>
