@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+@tailwind base;
+@tailwind components;
+
+.ease {
+    @apply transition ease-in-out duration-150;
+}
+
+.heading-1 {
+    @apply text-5xl font-extrabold tracking-tighter leading-none;
+}
+
+.heading-2 {
+    @apply text-4xl font-bold tracking-tighter leading-none;
+}
+
+.heading-3 {
+    @apply text-3xl font-normal tracking-tight;
+}
+
+.heading-4 {
+    @apply text-sm tracking-tight font-semibold text-gray-600 uppercase;
+}
+
+.paragraph {
+    @apply text-gray-700 leading-tight;
+}
+
+.teal-link {
+    @apply text-teal-600;
+}
+
+.link:hover,
+.teal-link:hover {
+    @apply underline;
+}
+
+.b {
+    @apply border border-gray-500 ease;
+}
+
+.b:hover {
+    @apply border-gray-800;
+}
+
+.ol {
+    @apply list-decimal pl-6;
+}
+
+.ul {
+    @apply list-disc pl-6;
+}
+
+@tailwind utilities;
+
+body {
+    font-family: 'Josefin Sans', system-ui, -apple-system, BlinkMacSystemFont,
+        'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif,
+        'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+        'Noto Color Emoji';
+    @apply bg-background text-foreground p-4;
+}
+
+a {
+    @apply cursor-pointer;
+}
+
+input {
+    @apply bg-transparent;
+}
+
+code {
+    @apply bg-gray-300 text-teal-700 p-1 rounded-md;
+}
+
+button:focus {
+    @apply outline-none;
+}
+
+::selection {
+    @apply bg-teal-200 text-foreground;
+}

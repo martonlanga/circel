@@ -1,0 +1,16 @@
+.tableContainer {
+    @apply overflow-x-auto mt-12;
+    mask-image: linear-gradient(to right, black 96%, transparent 100%);
+}
+
+.toggle {
+    @apply uppercase text-gray-600 tracking-wider text-xs font-bold leading-7 text-center w-20 rounded-md transition ease-in-out duration-150;
+}
+
+.toggle:focus {
+    @apply outline-none;
+}
+
+.toggle:hover {
+    @apply bg-gray-100;
+}

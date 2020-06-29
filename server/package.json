@@ -1,0 +1,34 @@
+{
+    "name": "rest-express",
+    "version": "1.0.0",
+    "license": "MIT",
+    "scripts": {
+        "dev": "ts-node-dev --respawn --transpileOnly --no-notify src/index.ts",
+        "tsc": "tsc",
+        "build": "npm i && tsc"
+    },
+    "dependencies": {
+        "@prisma/client": "2.1.3",
+        "body-parser": "1.19.0",
+        "dotenv": "^8.2.0",
+        "express": "4.17.1",
+        "next-iron-session": "^4.1.7",
+        "node-cron": "^2.0.3",
+        "twitter-lite": "^0.14.0"
+    },
+    "devDependencies": {
+        "@prisma/cli": "2.1.3",
+        "@types/body-parser": "1.19.0",
+        "@types/cors": "^2.8.6",
+        "@types/express": "4.17.6",
+        "@types/node": "12.12.47",
+        "@types/node-cron": "^2.0.3",
+        "cors": "^2.8.5",
+        "ts-node": "8.10.2",
+        "ts-node-dev": "^1.0.0-pre.49",
+        "typescript": "3.9.5"
+    },
+    "engines": {
+        "node": ">=10.0.0"
+    }
+}
